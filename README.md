@@ -31,8 +31,8 @@ C--> D[Contentstack Publish Event] --> E[Webhook Trigger Email Send]
 
 Using live preview to create an email template
 
-![Example](https://assets.contentstack.io/v3/assets/bltc19d350d8e21c628/bltf6aaf8923d63cd56/641a1faf4b79bc55e998e43a/gif1.mp4)
+![Example](https://github.com/nicknguyen-cs/Email-Template-Generator/blob/main/contentstack/img/demo2.gif)
 
 
 Switching between template and source code
-![Example](https://assets.contentstack.io/v3/assets/bltc19d350d8e21c628/blt6a724a739191517c/641a1faf5278f81d6788888b/gif2.mp4)
+![Example](https://github.com/nicknguyen-cs/Email-Template-Generator/blob/main/contentstack/img/demo1.gif)
