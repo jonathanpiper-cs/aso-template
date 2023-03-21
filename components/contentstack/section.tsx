@@ -46,7 +46,7 @@ export const Section: React.FC<SectionProps> = ({
               </td>
             )}
             <td>
-              <Image src={image.url} width={450} height={250} alt="" />
+              <Image src={image.url} width={250} height={250} alt="" />
             </td>
             {image_alignment === "Left" && (
               <td style={paddingStyle}>
