@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { useEffect, useMemo, useState } from "react";
 import ContentstackService from "../api/contentstack";
 import ContentstackEmail from "../../components/contentstack/contentstack-email";
+import "@contentstack/live-preview-utils/dist/main.css";
 
 interface Props {
   locale: string

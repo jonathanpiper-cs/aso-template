@@ -11,19 +11,19 @@ interface IMyProps {
     }
 }
 
-export const Quote = (props: IMyProps) => {
+export const Quote = (props: any) => {
     return (
         <table>
             <tbody>
                 <tr>
                     <td>
                         <blockquote className="static quote-icon">
-                            <p>&quot;{props.quote}&quot;</p>
+                            <p {...props.$.quote}>&quot;{props.quote}&quot;</p>
                             <cite>
-                                <span><strong>{props.name}</strong></span> |
-                                <span>{props.title}</span>
+                                <span {...props.$.name}><strong>{props.name}</strong></span> |
+                                <span {...props.$.title}>{props.title}</span>
                                 {props.logo &&
-                                <span>
+                                <span {...props.logo.$.title}>
                                       <Image src={props.logo.url} width={50} height={50} alt={"test"} />
                                 </span>
 }

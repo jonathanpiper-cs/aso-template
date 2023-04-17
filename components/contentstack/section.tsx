@@ -14,6 +14,7 @@ interface SectionProps {
   cta?: Link;
 }
 
+/*
 export const Section: React.FC<SectionProps> = ({
   section_title,
   section_description,
@@ -24,21 +25,25 @@ export const Section: React.FC<SectionProps> = ({
   const centerStyle : React.CSSProperties = { textAlign: "center" };
   const paddingStyle : React.CSSProperties = { padding: "0 3em" };
   const tableStyle : React.CSSProperties = { borderCollapse: "collapse", width: "100%" };
-
+*/
+export const Section = (props: any) => {
+  const centerStyle : React.CSSProperties = { textAlign: "center" };
+  const paddingStyle : React.CSSProperties = { padding: "0 3em" };
+  const tableStyle : React.CSSProperties = { borderCollapse: "collapse", width: "100%" };
   return (
     <table style={tableStyle as React.CSSProperties}>
       <tbody>
-        {image?.url && (
+        {props.image?.url && (
           <tr>
-            {image_alignment === "Right" && (
+            {props.image_alignment === "Right" && (
               <td style={paddingStyle}>
                 <div style={centerStyle}>
-                  <h2 style={centerStyle}>{section_title}</h2>
-                  <p>{section_description}</p>
-                  {cta?.href && (
-                    <p style={centerStyle}>
-                      <a href={cta.href} style={{ display: "inline-block", backgroundColor: "#0070f3", color: "#fff", padding: "12px 24px", borderRadius: "4px", textDecoration: "none" }}>
-                        {cta.title}
+                  <h2 style={centerStyle} {...props.$.section_title}>{props.section_title}</h2>
+                  <p {...props.$.section_description}>{props.section_description}</p>
+                  {props.cta?.href && (
+                    <p style={centerStyle} {...props.cta.$.href}>
+                      <a href={props.cta.href} style={{ display: "inline-block", backgroundColor: "#0070f3", color: "#fff", padding: "12px 24px", borderRadius: "4px", textDecoration: "none" }}>
+                        {props.cta.title}
                       </a>
                     </p>
                   )}
@@ -46,17 +51,17 @@ export const Section: React.FC<SectionProps> = ({
               </td>
             )}
             <td>
-              <Image src={image.url} width={250} height={250} alt="" />
+              <Image src={props.image.url} width={250} height={250} alt="" {...props.image.$.title} />
             </td>
-            {image_alignment === "Left" && (
+            {props.image_alignment === "Left" && (
               <td style={paddingStyle}>
                 <div style={centerStyle as React.CSSProperties}>
-                  <h2 style={centerStyle as React.CSSProperties}>{section_title}</h2>
-                  <p>{section_description}</p>
-                  {cta?.href && (
-                    <p style={centerStyle as React.CSSProperties}>
-                      <a href={cta.href} style={{ display: "inline-block", backgroundColor: "#0070f3", color: "#fff", padding: "12px 24px", borderRadius: "4px", textDecoration: "none" }}>
-                        {cta.title}
+                  <h2 style={centerStyle as React.CSSProperties} {...props.$.section_title}>{props.section_title}</h2>
+                  <p {...props.$.section_description}>{props.section_description}</p>
+                  {props.cta?.href && (
+                    <p style={centerStyle as React.CSSProperties} {...props.cta.$.href}>
+                      <a href={props.cta.href} style={{ display: "inline-block", backgroundColor: "#0070f3", color: "#fff", padding: "12px 24px", borderRadius: "4px", textDecoration: "none" }}>
+                        {props.cta.title}
                       </a>
                     </p>
                   )}
@@ -65,16 +70,16 @@ export const Section: React.FC<SectionProps> = ({
             )}
           </tr>
         )}
-        {!image?.url && (
+        {!props.image?.url && (
           <tr>
             <td style={paddingStyle}>
               <div style={centerStyle}>
-                <h2 style={centerStyle}>{section_title}</h2>
-                <p>{section_description}</p>
-                {cta?.href && (
+                <h2 style={centerStyle}>{props.section_title}</h2>
+                <p>{props.section_description}</p>
+                {props.cta?.href && (
                   <p style={centerStyle}>
-                    <a href={cta.href} style={{ display: "inline-block", backgroundColor: "#0070f3", color: "#fff", padding: "12px 24px", borderRadius: "4px", textDecoration: "none" }}>
-                      {cta.title}
+                    <a href={props.cta.href} style={{ display: "inline-block", backgroundColor: "#0070f3", color: "#fff", padding: "12px 24px", borderRadius: "4px", textDecoration: "none" }}>
+                      {props.cta.title}
                     </a>
                   </p>
                 )}

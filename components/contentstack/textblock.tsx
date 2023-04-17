@@ -8,17 +8,18 @@ interface IMyProps {
     block_height: number
 }
 
-export const TextBlock = (props: IMyProps) => {
+export const TextBlock = (props: any) => {
     return (
         <><style jsx>{`
                 .white  {
                     color: white !important;
                 }
-            `}</style><table width="100%" style={{ background: props.background_color.hex }}>
+            `}</style>
+            <table width="100%" style={{ background: props.background_color.hex }} {...props.$.text}>
                 <tbody>
                     <tr>
                         <td width="100%" height={props.block_height} align="center">
-                           <h3 className="white">{props.text}</h3>
+                           <h3 className="white" >{props.text}</h3>
                         </td>
                     </tr>
                 </tbody>

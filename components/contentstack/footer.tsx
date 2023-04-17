@@ -35,9 +35,8 @@ interface IMyProps {
     copyright: string
 }
 
-export const Footer = (props: IMyProps) => {
-
-    const IconLayout = props.icon_links.map((icon, index) => {
+export const Footer = (props: any) => {
+    const IconLayout = props.icon_links.map((icon : any, index : any) => {
         return (
             <td key={index}>
                 <a href={icon.icon_link.href} title={icon.icon_link.title}><Image src={icon.icon_svg.url} height={40} width={40} alt='' /></a>
@@ -69,7 +68,7 @@ export const Footer = (props: IMyProps) => {
                 <tbody>
                     <tr className="align-top">
                         <td width="100%" align="center">
-                            <Image src={props.company_logo.url} alt={''} width={250} height={150} />
+                            <Image src={props.company_logo.url} alt={''} width={250} height={150} {...props.company_logo.$.url}/>
                         </td>
                     </tr>
                 </tbody>
@@ -83,7 +82,7 @@ export const Footer = (props: IMyProps) => {
             </table>
             <table>
                 <tbody>
-                    {props.informational_lines.map((info, index) => (
+                    {props.informational_lines.map((info : any, index : any) => (
                         <tr key={index}>
                             <td align='center' className='padding-top'>
                                 {info.description} | <a href={info.link.href}>{info.link.title}</a>
@@ -94,13 +93,16 @@ export const Footer = (props: IMyProps) => {
                     }
                     <tr>
                         <td align='center' className='padding-top'>
-                            {props.action_links.map((info, index) => (
+                            {props.action_links.map((info: any, index: any) => (
                                 <>
                                     <a href={info.href} key={index} className="padding">{info.title}</a>
                                 </>
                             ))
                             }
                         </td>
+                    </tr>
+                    <tr>
+                        <td align='center' className='padding-top' {...props.$.copyright} >{props.copyright} </td>
                     </tr>
                 </tbody>
             </table>

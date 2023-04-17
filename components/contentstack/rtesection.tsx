@@ -18,7 +18,7 @@ interface Link {
     href: string;
 }
 
-export const RteSection = (props: Section) => {
+export const RteSection = (props: any) => {
     return (
         <table>
             <style jsx>{`
@@ -32,7 +32,7 @@ export const RteSection = (props: Section) => {
             `}</style>
             <tbody>
                 <tr>
-                    <td>
+                    <td {...props._metadata.$.uid}>
                         {Parser(props.json_rte)}
                     </td>
                 </tr>

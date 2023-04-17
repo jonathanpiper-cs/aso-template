@@ -23,6 +23,7 @@ const getRenderedElements = (componentDefinition: any, i: number, locale: string
   const componentType = Object.keys(componentDefinition)[0]
   const componentDetails = componentDefinition[componentType]
   switch (componentType) {
+    
     case "section":
       return <Section key={i} {...componentDetails} />
     case "line":
