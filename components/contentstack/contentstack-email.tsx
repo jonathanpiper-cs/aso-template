@@ -30,7 +30,7 @@ export const ContentstackEmail = ( props : IMyProps ) => {
   </table>
   )
 
-  const rawOutput = ReactDOMServer.renderToStaticMarkup(output).replace(/<hpc>/g, "<!--").replace(/<\/hpc>/g, "-->")
+  const rawOutput = ReactDOMServer.renderToStaticMarkup(output)
 
   return !props.asRaw ? output : (<pre>{beautify.html(rawOutput, { indent_size: 2, wrap_line_length: 80 })}</pre>)
 }
