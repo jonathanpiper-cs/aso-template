@@ -9,7 +9,7 @@ export interface IMyProps {
 
 export const GenericEmail = (props: IMyProps) => {
     const output = (
-            <table align="center" style={{ width: '50%'}} bgcolor="#f4f4f4">
+            <table align="center" style={{ width: '15%'}} bgcolor="#f4f4f4">
                 <tr>
                     <td>
                         <table align="center" bgcolor="#ffffff" style={{ width: '100%', margin: 0, backgroundColor: '#ffffff' }} cellPadding="20" cellSpacing="0" border={0}>
