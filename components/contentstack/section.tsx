@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { File } from "./contentstack";
+import { File } from "../../contentstack";
 
 interface Link {
   title: string;

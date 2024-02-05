@@ -1,6 +1,7 @@
 import { addEditableTags, Next, Node } from '@contentstack/utils'
 import Contentstack, { Stack } from 'contentstack'
 import PrimaryStack, { onEntryChange } from './stack'
+
 export default class ContentstackService {
   public Stack: Stack
   public OnEntryChange: any
@@ -10,19 +11,19 @@ export default class ContentstackService {
     this.OnEntryChange = onEntryChange
   }
 
-  public async getEmail(id: string, locale: string = "en-us"): Promise<[any, Record<string, any>]> {
+  public async getEmail(id: string, locale: string = "en-us", contentType: string): Promise<[any, Record<string, any>]> {
     try {
       const response = await this.Stack
-        .ContentType('contentstack_email_template')
+        .ContentType(contentType)
         .Entry(id)
         .language(locale.toLocaleLowerCase())
         .includeFallback()
         .includeEmbeddedItems()
         .toJSON()
         .fetch()
-      return this.processEntry(response, 'contentstack_email_template')
+      return this.processEntry(response, contentType)
     } catch (error) {
-      console.log(error)
+      console.log(error, id, locale)
       return [null, {}]
     }
   }
@@ -145,4 +146,7 @@ export default class ContentstackService {
 
     return paths
   }
+  
 }
+
+

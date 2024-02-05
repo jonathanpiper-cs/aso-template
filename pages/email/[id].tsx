@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import { useEffect, useMemo, useState } from "react";
-import ContentstackService from "../api/contentstack";
+import ContentstackService from "../helpers/contentstack";
 import ContentstackEmail from "../../components/contentstack/contentstack-email";
 import "@contentstack/live-preview-utils/dist/main.css";
 
@@ -23,7 +23,7 @@ const Email: NextPage = () => {
     const updateData = async () => {
       const id = router.query.id as string
       if (id) {
-        const [newReponse, newBoundData] = await contentstackService.getEmail(id)
+        const [newReponse, newBoundData] = await contentstackService.getEmail(id, "en-us", "contentstack_email_template")
         setEntry(newReponse)
       }
     }
