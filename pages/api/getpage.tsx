@@ -1,6 +1,6 @@
 import GenericEmail from '@/components/generic/generic-email'
 import type { NextApiRequest, NextApiResponse } from 'next'
-import ContentstackService from '../helpers/contentstack';
+import ContentstackService from '../../helpers/contentstack';
 import { useMemo } from 'react';
 
 type ResponseData = {

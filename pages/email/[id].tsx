@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import { useEffect, useMemo, useState } from "react";
-import ContentstackService from "../helpers/contentstack";
+import ContentstackService from "../../helpers/contentstack";
 import ContentstackEmail from "../../components/contentstack/contentstack-email";
 import "@contentstack/live-preview-utils/dist/main.css";
 
