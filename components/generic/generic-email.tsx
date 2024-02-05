@@ -9,10 +9,10 @@ export interface IMyProps {
 
 export const GenericEmail = (props: IMyProps) => {
     const output = (
-            <table align="center" style={{ width: '15%'}} bgcolor="#f4f4f4">
+            <table align="center" style={{ width: '35%'}} bgcolor="#f4f4f4">
                 <tr>
                     <td>
-                        <table align="center" bgcolor="#ffffff" style={{ width: '100%', margin: 0, backgroundColor: '#ffffff' }} cellPadding="20" cellSpacing="0" border={0}>
+                        <table align="center" bgcolor="#ffffff" style={{ margin: 0, backgroundColor: '#ffffff' }} cellPadding="20" cellSpacing="0" border={0}>
                             <GenericComponents modularBlocks={props.modularBlocks} locale={'en-us'} />
                         </table>
                     </td>
@@ -22,7 +22,7 @@ export const GenericEmail = (props: IMyProps) => {
 
     const rawOutput = ReactDOMServer.renderToStaticMarkup(output)
 
-    return !props.asRaw ? output : (<pre>{beautify.html(rawOutput, { indent_size: 2, wrap_line_length: 80 })}</pre>)
+    return !props.asRaw ? output : (<pre>{beautify.html(rawOutput, { indent_size: 0, wrap_line_length: 80 })}</pre>)
 }
 
 export default GenericEmail

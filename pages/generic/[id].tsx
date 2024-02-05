@@ -36,7 +36,7 @@ const Email: NextPage = () => {
         return (<>Loading...</>)
     }
     return (
-        <div className="container type-spacing-relaxed">
+        <div style={{textAlign: "center"}}>
             <nav style={{ textAlign: "center" }}>
                 <button onClick={() => setTab("email")} style={{ margin: "5px", padding: "6px 8px", borderRadius: "6px", background: tab === "email" ? "#222" : "#777", color: "#eee", border: "0px solid #000" }}>Email</button>
                 <button onClick={() => setTab("source")} style={{ margin: "5px", padding: "6px 8px", borderRadius: "6px", background: tab === "source" ? "#222" : "#777", color: "#eee", border: "0px solid #000" }}>Source</button>
