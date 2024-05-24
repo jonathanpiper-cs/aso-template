@@ -7,6 +7,16 @@ This is an example of how to generate an email template with contentstack. Curre
 First install the packages
 
      npm install
+
+Create a .env file defining the following variables
+
+     NEXT_PUBLIC_CS_ENVIRONMENT=
+     NEXT_PUBLIC_CS_LIVE_PREVIEW_TOKEN=
+     NEXT_PUBLIC_CS_DELIVERY_TOKEN=
+     NEXT_PUBLIC_CS_API_KEY=
+
+Use this command
+
      npm run dev
      
 to run in development mode. This will run it locally at http://localhost:3000/email/{entry-uid}
@@ -16,16 +26,6 @@ If you do not have access to the stack model go to
     contentstack/contentmodels/contenstack_email_template.json
 
 upload this file into contentstack for a temporary content model supported by this code base.
-
-
----
-In reality, this is the flow of how an email should be generated
-
-```mermaid
-graph LR
-A[Contentstack] --> B[Email Parsing System] --> C[Contentstack Verification]
-C--> D[Contentstack Publish Event] --> E[Webhook Trigger Email Send]
-```
 
 ## Example
 
