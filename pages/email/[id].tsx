@@ -24,6 +24,7 @@ const Email: NextPage = () => {
       const id = router.query.id as string
       if (id) {
         const [newReponse, newBoundData] = await contentstackService.getEmail(id, "en-us", "contentstack_email_template")
+        console.log(newReponse)
         setEntry(newReponse)
       }
     }

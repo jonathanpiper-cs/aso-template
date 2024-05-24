@@ -1,6 +1,8 @@
 import Contentstack from 'contentstack'
 import ContentstackLivePreview from '@contentstack/live-preview-utils'
 
+console.log(process.env.NEXT_PUBLIC_CS_LIVE_PREVIEW_TOKEN)
+
 const PrimaryStack = Contentstack.Stack({
     api_key: process.env.NEXT_PUBLIC_CS_API_KEY || "",
     delivery_token: process.env.NEXT_PUBLIC_CS_DELIVERY_TOKEN || "",
